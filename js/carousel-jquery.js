@@ -71,7 +71,7 @@
 	
 	Carousel.prototype.next = function(){
 		//next
-		if(this.current_page == this.page_num-1){
+		if(this.current_page == this.page_need-1){
 			return false
 		}
 		this.current_page++;
@@ -80,26 +80,37 @@
 	};
 	
 	Carousel.prototype.render = function(){
+		var max_left = "2000px";
+		var start_left = 10;
+		var left_increment = 150;
 		var items = this.children, count = this.children_num;
-		//console.log(this.page_need)
-		//console.log(items)
-		$(items).hide();
+		
+		
+		//$(items).hide();
 		for(var i=0;i<count;i++){
 			
 			
             	if(items[i]){
             		if(i<this.current_pos){
-            			$(items[i]).hide();
-            			//this.target_group[index].setStyle({"left": "-"+max_left});
+            			//$(items[i]).hide();
+            			//$(items[i]).css({"left": "-"+max_left}).animate({},2000);;
+            			$(items[i]).animate({"left": "-"+max_left},500);
             		}
             		else if(i>this.current_pos+this.count_per_page-1){
-            			$(items[i]).hide();
-            			//this.target_group[index].setStyle({"left": max_left});
+            			//$(items[i]).hide();
+            			//$(items[i]).css({"left": max_left}).animate({},2000);
+            			$(items[i]).animate({
+            				"left": max_left
+            			},500)
+            			
             		}
             		else {
             			//console.log(i)
-            			$(items[i]).show();
-            			//this.target_group[index].setStyle({"left": this.start_left+(index-this.current_pos)*this.left_increment+"px"});
+            			//$(items[i]).show();
+            			//$(items[i]).css({"left": start_left+(i-this.current_pos)*left_increment+"px"}).animate({},2000);;
+            			$(items[i]).animate({
+            				"left": start_left+(i-this.current_pos)*left_increment+"px"
+            			},500);
             		}
     		
             	}
