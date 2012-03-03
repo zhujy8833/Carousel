@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+	<link media="all" rel="stylesheet" type="text/css" href="/reg/templates/css/selectr.css" />
+  	<link media="all" rel="stylesheet" type="text/css" href="/reg/templates/css/chosen.css" />
+    <style type="text/css">
+    	#wrapper{
+    		display:block;
+    		width:500px;
+    		margin: 0 auto
+    	}
+    	#carousel{
+    		
+    		overflow:hidden;
+    		position:relative;
+    		background:green;
+    		margin: 0 auto;
+    		padding: 12px;
+    		
+    	}
+    	.children {
+    		background: none repeat scroll 0 0 dimGray;
+    		color: white;
+    		display: inline-block;
+    		height: 100px;
+    		margin: 1px;
+    		padding: 12px;
+}
+    </style>
+<body>
+	<section id="wrapper">
+	 <section id="carousel">
+		<article class="children">
+			Today is Monday
+		</article>
+		<article class="children">
+			Today is Tuesday
+		</article>
+		<article class="children">
+			Today is Wednesday
+		</article>
+		<article class="children">
+			Today is Thursday
+		</article>
+		<article class="children">
+			Today is Friday
+		</article>
+	 </section>
+	</section>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="js/carousel-jquery.js"></script>
+	<script type="text/javascript" src="js/selectr.js"></script>
+	<script type="text/javascript">
+		$("#carousel").carousel({
+			
+			
+		});
+		
+	</script>
+	
+</body>
+</html>
